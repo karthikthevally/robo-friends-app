@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SearchBox from './SearchBox';
-import CardList from './CardList';
-
+import SearchBox from '../components/SearchBox';
+import CardList from '../components/CardList';
+import Scroll from '../components/Scroll';
 
 class App extends Component {
     constructor() {
@@ -25,9 +25,11 @@ class App extends Component {
         });
         return(
             <div className="tc">
-                 <h1>Robo Friends</h1>
+                <h1>Robo Friends</h1>
                 <SearchBox searchChange={this.searchValue}/>
-                <CardList robots={filteredRobots}/>
+                <Scroll>
+                    <CardList robots={filteredRobots}/>
+                </Scroll>
             </div>
         );
     }
